@@ -90,9 +90,9 @@ bool nomultipart                  = false;
 bool pathrequeststyle             = false;
 std::string program_name;
 std::string service_path          = "/";
-std::string host                  = "http://s3.amazonaws.com";
+std::string host                  = "http://ksyun.com";
 std::string bucket                = "";
-std::string endpoint              = "us-east-1";
+std::string endpoint              = "ks3-cn-beijing-internal";
 s3fs_log_level debug_level        = S3FS_LOG_ERR;
 const char*    s3fs_log_nest[S3FS_LOG_NEST_MAX] = {"", "  ", "    ", "      "};
 
@@ -4618,10 +4618,10 @@ static int s3fs_check_service(void)
         S3FS_PRN_CRIT("Could not connect wrong region %s, so retry to connect region %s.", endpoint.c_str(), expectregion.c_str());
         endpoint = expectregion;
         if(S3fsCurl::IsSignatureV4()){
-            if(host == "http://s3.amazonaws.com"){
-                host = "http://s3-" + endpoint + ".amazonaws.com";
-            }else if(host == "https://s3.amazonaws.com"){
-                host = "https://s3-" + endpoint + ".amazonaws.com";
+            if(host == "http://ksyun.com"){
+                host = "http://" + endpoint + ".ksyun.com";
+            }else if(host == "https://ksyun.com"){
+                host = "https://" + endpoint + ".ksyun.com";
             }
         }
 
