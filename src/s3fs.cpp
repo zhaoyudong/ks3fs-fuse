@@ -90,7 +90,7 @@ bool nomultipart                  = false;
 bool pathrequeststyle             = false;
 std::string program_name;
 std::string service_path          = "/";
-std::string host                  = "http://ksyun.com";
+std::string host                  = "http://ks3-cn-beijing-internal.ksyun.com";
 std::string bucket                = "";
 std::string endpoint              = "ks3-cn-beijing-internal";
 s3fs_log_level debug_level        = S3FS_LOG_ERR;
